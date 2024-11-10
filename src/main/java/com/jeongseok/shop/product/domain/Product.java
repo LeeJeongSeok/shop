@@ -1,6 +1,8 @@
 package com.jeongseok.shop.product.domain;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Convert;
+import jakarta.persistence.Converter;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -11,6 +13,7 @@ import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters.LocalDateTimeConverter;
 
 @Entity
 @Table(name = "product")
@@ -30,9 +33,11 @@ public class Product {
 	private int price;
 
 	@Column(name = "created_at")
+	@Convert(converter = LocalDateTimeConverter.class)
 	private LocalDateTime createdAt;
 
 	@Column(name = "updated_at")
+	@Convert(converter = LocalDateTimeConverter.class)
 	private LocalDateTime updatedAt;
 
 	@Builder
