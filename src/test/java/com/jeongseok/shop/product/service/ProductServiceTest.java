@@ -1,13 +1,13 @@
 package com.jeongseok.shop.product.service;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import com.jeongseok.shop.product.domain.Product;
 import com.jeongseok.shop.product.repository.ProductRepository;
 import java.time.LocalDateTime;
-import java.util.Collections;
 import java.util.List;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
