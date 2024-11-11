@@ -6,6 +6,7 @@ import static org.mockito.Mockito.when;
 
 import com.jeongseok.shop.product.domain.Product;
 import com.jeongseok.shop.product.repository.ProductRepository;
+import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.List;
 import org.junit.jupiter.api.DisplayName;
@@ -16,7 +17,7 @@ class ProductServiceTest {
 	@Test
 	@DisplayName("상품 목록 서비스 기능 확인")
 	void getProducts() {
-		Product product = new Product(1L, "테스트 상품", 10000);
+		Product product = new Product(1L, "테스트 상품", 10000, LocalDateTime.now(), LocalDateTime.now());
 		List<Product> productList = List.of(product);
 
 		ProductRepository productRepository = mock(ProductRepository.class);
