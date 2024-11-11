@@ -2,7 +2,6 @@ package com.jeongseok.shop.product.domain;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Convert;
-import jakarta.persistence.Converter;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -41,10 +40,12 @@ public class Product {
 	private LocalDateTime updatedAt;
 
 	@Builder
-	public Product(long id, String name, int price) {
+	public Product(long id, String name, int price, LocalDateTime createdAt, LocalDateTime updatedAt) {
 		this.id = id;
 		this.name = name;
 		this.price = price;
+		this.createdAt = createdAt;
+		this.updatedAt = updatedAt;
 	}
 
 }
