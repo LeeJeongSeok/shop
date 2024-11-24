@@ -1,1 +1,7 @@
-spring.application.name=shop
+file:
+  dir: /Users/jeongseok/Desktop/file_upload_test
+
+spring:
+  servlet:
+    multipart:
+      enabled: true
